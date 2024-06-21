@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
+from PIL import Image
 
 def encrypt_image(image_path, key, output_path):
     # Read the image
@@ -56,6 +57,19 @@ if __name__ == '__main__':
 
     # Encrypt the image
     encrypt_image(image_path, key, output_path)
+    
+def encrypt_image(image_path, key, output_path):
+    try:
+        # Open the image using PIL
+        image = Image.open(image_path)
+        image_bytes = image.tobytes()
+        # ... rest of your encryption code ...
+    except FileNotFoundError:
+        print(f"Error: Image not found at '{image_path}'")
+    except IOError:
+        print(f"Error: Could not open image '{image_path}'")
+    except Exception as e:
+        print(f"Error: An error occurred while processing image: {e}")
 
     # Set the path to the encrypted file
     encrypted_path = output_path
