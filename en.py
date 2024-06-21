@@ -100,5 +100,5 @@ if __name__ == "__main__":
 
 # LEGEND
 # https://virusshare.com/hashes
-    #     directory_to_scan = "/home/q/Documents/libri/infosec"
-    # hash_file_path = "/home/q/Documen
+    #     directory_to_scan = "/home/kali"
+    # hash_file_path = "/home/kali/hash"
